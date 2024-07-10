@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Technical-Documention-page-AWS-Config</title>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+  <main id="main-doc">
+    <!-- Here the navbar, which enables us to navigate to required subtopics mentioned to the left of the docpage(fullScreen view)--->
+    <!--- I also included the @media component in the style.css to make the docpage adjust according to screen size (mobile screen view) --->
+    <nav id="navbar"><header>AWS Config</header>
+    <ul>
+      <li>
+        <a class="nav-link" href="#What_is_AWS_Config?">What is AWS Config?</a>
+      </li>
+
+      <li>
+        <a class="nav-link" href="#Uses_of_AWS_Config">Uses of AWS Config</a>
+      </li>
+    
+      <li>
+        <a class="nav-link" href="#How_AWS_Config_Works?">How AWS Config Works?</a>
+      </li>
+    
+      <li>
+        <a class="nav-link" href="#Considerations">Considerations</a>
+      </li>
+   
+      <li>
+        <a class="nav-link" href="#Getting_Started_with_AWS_Config">Getting Started with AWS Config</a>
+      </li>
+    
+      <li>
+        <a class="nav-link" href="#Sign_up_for_an_AWS_account">Sign up for an AWS account</a>
+      </li>
+    
+      <li>
+        <a class="nav-link" href="#Create_a_user_with_administrative_access">Create a user with administrative access</a>
+      </li>
+    
+      <li>
+        <a class="nav-link" href="#Reference">Reference</a>
+      </li>
+    </ul>
+    </nav>
+
+  <section class="main-section" id ="What_is_AWS_Config?">
+     <header>
+     What is AWS Config?
+    </header>
+    <article>
+    <p>AWS Config is a service provided by Amazon Web Services (AWS) that enables you to assess, audit, and evaluate the configurations of your AWS resources. AWS Config continuously monitors and records your AWS resource configurations and allows you to automate the evaluation of recorded configurations against desired configurations.</p></article>
+    </section> 
+    <section class="main-section" id ="Uses_of_AWS_Config">
+   <header>
+     Uses of AWS Config
+    </header> <article>
+    <ol>
+      <li><strong>Continuous Monitoring:</strong><p>AWS Config continuously monitors and records your AWS resource configurations. This helps in maintaining an inventory of all your AWS resources and their configurations over time.
+        </p></li>
+
+       <li><strong>Compliance Auditing:</strong><p>AWS Config helps in ensuring compliance with internal policies and industry standards by enabling you to create and manage rules that check the configurations of your AWS resources. You can receive alerts and take action when resources are not compliant.
+        </p></li>
+
+       <li><strong>Change Management:</strong><p>By tracking changes to configurations and relationships between resources, AWS Config helps in identifying how a change to one resource might affect other resources. This is crucial for troubleshooting and change management.
+        </p></li>
+        
+        <li><strong>Resource Inventory:</strong><p>AWS Config provides a detailed inventory of your AWS resources, including how the resources are related to one another. This inventory can be used for various purposes, including cost management and operational management.
+        </p></li>
+
+         <li><strong>Security Analysis:</strong><p>AWS Config allows you to detect and respond to potential security risks by identifying non-compliant configurations. You can automate security responses to misconfigurations and continuously enforce best practices.
+        </p></li>
+
+           <li><strong>Operational Troubleshooting:</strong><p>AWS Config helps in troubleshooting operational issues by providing a historical view of configurations and relationships. You can see what has changed in your environment, which aids in root cause analysis.
+        </p></li>
+    </ol>
+    <p>AWS Config is a critical service for managing the operational and security posture of your AWS resources, ensuring compliance, and providing visibility into the configuration and state of your AWS environment.</p></article>
+    </section> 
+    <section class="main-section" id="How_AWS_Config_Works?">
+   <header>
+     How AWS Config Works?
+    </header>
+<p>AWS Config provides a detailed view of the configuration of AWS resources in your AWS account. This includes how the resources are related to one another and how they were configured in the past so that you can see how the configurations and relationships change over time.</p>
+
+<p>An AWS resource is an entity you can work with in AWS, such as an Amazon Elastic Compute Cloud (EC2) instance, an Amazon Elastic Block Store (EBS) volume, a security group, or an Amazon Virtual Private Cloud (VPC). For a complete list of AWS resources supported by AWS Config, see Supported Resource Types.</p>
+
+</section> 
+    <section class="main-section" id="Considerations" >
+   <header>
+        Considerations
+    </header> 
+    <div>
+<p>AWS account: You need an active AWS account. For more information, see the link below
+  <pre><code>https://docs.aws.amazon.com/config/latest/developerguide/getting-started.html#getting-started-signing-up</code></pre>
+</p>
+
+<p>Amazon S3 Bucket: You need to an S3 bucket to receive data for your configuration snapshots and history. For more information, see the link below
+  <pre><code>https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html</code></pre>
+</p>
+
+<p>Amazon SNS Topic: You need an Amazon SNS to receive notifications when there are changes to you configuration snapshots and history. For more information, see the link below
+  <pre><code>https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html</code></pre>
+</p>
+
+<p>IAM Role: You need an IAM role that has the necessary permissions to access AWS Config. For more information, see the link below.
+  <pre><code>https://docs.aws.amazon.com/config/latest/developerguide/iamrole-permissions.html</code></pre>
+</p>
+
+<p>Resource types: You can decide which resource types you want AWS Config to record. For more information, see the link below.
+  <pre><code>https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html</code></pre>
+</p>
+</div>
+</section> 
+    
+    
+<section class="main-section"id="Sign_up_for_an_AWS_account">
+   <header>
+     Sign up for an AWS account
+   </header> 
+   <div>
+  <p>If you do not have an AWS account, complete the following steps to create one.</p>
+
+  <p>To sign up for an AWS account</p>
+<ul>
+   <li> Open 
+     <pre><code>https://portal.aws.amazon.com/billing/signup</code></pre>
+   </li>
+
+   <li>Follow the online instructions.
+           <p> Part of the sign-up procedure involves receiving a phone call and entering a verification code on the phone keypad.</p>
+           <p>When you sign up for an AWS account, an AWS account root user is created. The root user has access to all AWS services and resources in the account. As a security best practice, assign administrative access to a user, and use only the root user to perform <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/root-user-tasks.html"target="_blank">tasks that require root user access.</a>
+            </p>
+   </li>
+</ul>
+AWS sends you a confirmation email after the sign-up process is complete. At any time, you can view your current account activity and manage your account by going to <a href="https://aws.amazon.com/"target="_blank">https://aws.amazon.com/</a> and choosing My Account.
+</div>
+  <br>
+  </section> 
+<section class="main-section" id="Create_a_user_with_administrative_access">
+   <header>
+     Create a user with administrative access
+    </header> 
+    <p>After you sign up for an AWS account, secure your AWS account root user, enable AWS IAM Identity Center, and create an administrative user so that you don't use the root user for everyday tasks.</p>
+
+    <p><strong>Secure your AWS account root user</strong></p>
+<ul>
+     <li>Sign in to the AWS Management Console as the account owner by choosing <strong>Root user</strong> and entering your AWS account email address. On the next page, enter your password.</li>
+
+     <li>For help signing in by using root user, see <a href="https://docs.aws.amazon.com/signin/latest/userguide/console-sign-in-tutorials.html#introduction-to-root-user-sign-in-tutorial" target="_blank">Signing in as the root user</a> in the AWS Sign-In User Guide</li>
+
+     <li>Turn on multi-factor authentication (MFA) for your root user.</li>
+
+     <li>For instructions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/enable-virt-mfa-for-root.html" target="_blank" >Enable a virtual MFA device for your AWS account root user (console)</a> in the IAM User Guide.</li>
+</ul>
+     <p><strong>Create a user with administrative access</strong></p><ul>
+
+     <li>Enable IAM Identity Center.</li>
+
+    <p>For instructions, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/get-set-up-for-idc.html" target="_blank">Enabling AWS IAM Identity Center</a> in the AWS IAM Identity Center User Guide.</p>
+
+    <li>In IAM Identity Center, grant administrative access to a user.</li>
+
+     <p><strong>For a tutorial </strong>about using the IAM Identity Center directory as your identity source, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/quick-start-default-idc.html" target="_blank">Configure user access with the default IAM Identity Center directory </a>in the AWS IAM Identity Center User Guide.</p>
+
+</ul>
+<p><strong>Sign in as the user with administrative access</strong></p>
+<ul>
+    <li>To sign in with your IAM Identity Center user, use the sign-in URL that was sent to your email address when you created the IAM Identity Center user.</li>
+
+    <li>For help signing in using an IAM Identity Center user, see <a href="https://docs.aws.amazon.com/signin/latest/userguide/iam-id-center-sign-in-tutorial.html" target="_blank">Signing in to the AWS access portal</a> in the AWS Sign-In User Guide.</li>
+</ul>
+
+<p><strong>Assign access to additional users</strong></p>
+<ul>
+    <li>In IAM Identity Center, create a permission set that follows the best practice of applying least-privilege permissions.</li>
+
+   <li>For instructions, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/get-started-create-a-permission-set.html" target="_blank">Create a permission set </a>in the AWS IAM Identity Center User Guide.</li>
+
+   <li>Assign users to a group, and then assign single sign-on access to the group.</li>
+
+   <li>For instructions, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/addgroups.html" target="_blank">Add groups </a>in the AWS IAM Identity Center User Guide.</li>
+
+</ul>
+    </section>
+<section class="main-section" id="Getting_Started_with_AWS_Config">
+   <header>
+     Getting Started with AWS Config
+   </header>
+    <p>After you sign up for an AWS account, you can get started with AWS Config with the AWS Management Console, AWS CLI, or the AWS SDKs.
+
+<ol>Topics:
+<li>Setting Up AWS Config with the Console
+  <pre><code>https://docs.aws.amazon.com/config/latest/developerguide/gs-console.html</code></pre>
+</li>
+
+<li>Setting Up AWS Config with the AWS CLI
+  <pre><code>https://docs.aws.amazon.com/config/latest/developerguide/gs-cli.html</code></pre>
+</li>
+
+<li>Using AWS Config service with the AWS SDK
+  <pre><code>https://docs.aws.amazon.com/config/latest/developerguide/sdk-general-information-section.html</code></pre>
+</li>
+</ol>
+</p> 
+    </section> 
+<section class="main-section" id="Reference">
+      <header>Reference</header>
+      <article>
+        <ul>
+          <li>
+            "This documentation has been created with reference to the official AWS(developer Guide) page."
+            <a href="https://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html" target="_blank" alt="doc-refer">AWS/developerGuide</a>
+          </li>
+        </ul>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
